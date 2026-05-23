@@ -1,0 +1,6 @@
+GET https://cse341-project1-3amn.onrender.com/contacts/
+# the request above returns a json object with all contacts data.
+
+GET https://cse341-project1-3amn.onrender.com/contacts/69ff92b82d8bfaa8d83a77ec
+# the request above returns a json object with a single contact data.
+
