@@ -1,0 +1,47 @@
+[
+  {
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "year": 2008,
+    "genres": ["Action", "Crime", "Drama"],
+    "rating": 9.1,
+    "durationMinutes": 152,
+    "isOscarWinner": true
+  },
+  {
+    "title": "Inception",
+    "director": "Christopher Nolan",
+    "year": 2010,
+    "genres": ["Sci-Fi", "Action"],
+    "rating": 8.8,
+    "durationMinutes": 148,
+    "isOscarWinner": true
+  },
+  {
+    "title": "Parasite",
+    "director": "Bong Joon-ho",
+    "year": 2019,
+    "genres": ["Thriller", "Drama"],
+    "rating": 8.6,
+    "durationMinutes": 132,
+    "isOscarWinner": true
+  },
+  {
+    "title": "Avengers: Endgame",
+    "director": "Anthony Russo",
+    "year": 2019,
+    "genres": ["Action", "Adventure", "Sci-Fi"],
+    "rating": 8.4,
+    "durationMinutes": 181,
+    "isOscarWinner": false
+  },
+  {
+    "title": "Whiplash",
+    "director": "Damien Chazelle",
+    "year": 2014,
+    "genres": ["Drama", "Music"],
+    "rating": 8.5,
+    "durationMinutes": 106,
+    "isOscarWinner": true
+  }
+]

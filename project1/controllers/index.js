@@ -27,7 +27,7 @@ controller.getAllData = async (req, res) => {
 controller.getData = async (req, res) => {
   try {
     const contactId = new ObjectId(req.params.contact_id);
-
+    
     const result = await Contact.findOne({ _id: contactId });
 
     if(!result) {
