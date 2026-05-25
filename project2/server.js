@@ -12,9 +12,9 @@ const options = {
     definition: {
       openapi: "3.0.0",
       info: {
-        title: "My api about expenses management",
+        title: "My expenses management API",
         version: "1.0.0",
-        description: "This API for managing expenses data."
+        description: "This API is for managing expenses data, refining your finances."
       }
     },
     apis: ["./routes/*.js"]

@@ -58,8 +58,7 @@ controller.getExpense = async (req, res) => {
 
 controller.createExpense = async (req, res) => {
     try {
-
-        if(!req.body.description.trim() || !req.body.amount || !req.body.paymentMethod.trim()) {
+        if(!req.body.description.trim() || !req.body.amount || !req.body.paymentMethod) {
             return res.status(400).json({
                 success: false,
                 message: "description, amount and payment is required"
