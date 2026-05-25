@@ -69,7 +69,8 @@ router.get('/:movie_id', validation(idSchema), handleErrors(controller.getMovie)
  *               year:
  *                 type: number
  *               genres:
- *                 type: array
+ *                 type: string
+ *                 example: ["Sci-fi", "Action"]
  *               rating:
  *                   type: number
  *               durationMinutes:
