@@ -26,7 +26,7 @@ router.get('/', expController.getAllExpense)
  * @swagger
  * /expenses/{expense_id}:
  *   get:
- *     summary: Get a expense by expense_id
+ *     summary: Get a expense data by expense_id
  *     tags:
  *       - Expenses
  *     parameters:

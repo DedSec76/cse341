@@ -12,9 +12,9 @@ const options = {
     definition: {
       openapi: "3.0.0",
       info: {
-        title: "My expenses management API",
+        title: "My management APIs",
         version: "1.0.0",
-        description: "This API is for managing expenses data, refining your finances."
+        description: "These APIs are used to manage personal expense data. \n\nAnd also to manage a collection of movies you enjoy."
       }
     },
     apis: ["./routes/*.js"]
@@ -29,12 +29,7 @@ app.use(express.urlencoded({ extended: true }))
 // Routes
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
-app.use('/expenses', require('./routes/expenseRoute'))
-
-app.use((req, res) => {
-    res.send("Hello world")
-})
-
+app.use('/', require('./routes'))
 
 const host = process.env.HOST;
 const port = process.env.PORT;

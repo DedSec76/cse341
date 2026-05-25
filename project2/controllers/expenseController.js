@@ -40,7 +40,7 @@ controller.getExpense = async (req, res) => {
             })
         }
         
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             data: result
         })
@@ -67,7 +67,7 @@ controller.createExpense = async (req, res) => {
 
         const result = await Expense.create(req.body)        
         
-        res.status(201).json({
+        return res.status(201).json({
             success: true,
             id: result._id,
             message: 'Data created successfully'
@@ -84,7 +84,6 @@ controller.createExpense = async (req, res) => {
 controller.updateExpense = async (req, res) => {
     try {
         const expenseId = new ObjectId(req.params.expense_id)
-        console.log(expenseId)
 
         const result = await Expense.findOneAndUpdate(
             { _id: expenseId },
@@ -98,7 +97,7 @@ controller.updateExpense = async (req, res) => {
             })
         }
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: `Data with ID= ${expenseId} was updated successfully`
         })
@@ -125,7 +124,7 @@ controller.deleteExpense = async (req, res) => {
             })
         }
 
-        res.status(200).json({
+        return res.status(200).json({
             success: true,
             message: `Data with ID = ${result._id} delete successfully!`
         })

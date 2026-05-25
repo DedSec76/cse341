@@ -1,9 +1,19 @@
 const { Schema, model } = require('mongoose');
 
 const movieSchema = new Schema({
-    title: String,
-    director: String,
-    year: Number,
+    title: { 
+        type: String,
+        trim: true,
+        required: [true, 'Title is required']
+    },
+    director: {  
+        type: String,
+        trim: true
+    },
+    year: {
+        type: Number,
+        required: [true, 'Year is required']
+    },
     genres: {
         type: [String],
         validate: {
@@ -13,9 +23,18 @@ const movieSchema = new Schema({
             message: 'Array cannot has more than 3 elements'
         }
     },
-    rating: Number,
-    durationMinutes: Number,
-    isOscarWinner: Boolean
+    rating: {
+        type: Number,
+        required: [true, 'rating is required']
+    },
+    durationMinutes: {
+        type: Number,
+        required: [true, 'durationMinutes is required']
+    },
+    isOscarWinner: {
+        type: Boolean,
+        default: false
+    }
 })
 
 const Movie = model('Movie', movieSchema);
