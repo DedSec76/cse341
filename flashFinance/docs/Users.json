@@ -1,0 +1,13 @@
+{
+  "firstName": "Aldair",
+  "lastName": "Rutte Bazán",
+  "email": "abazan@byupathway.edu",
+  "password": "dedsec6840#",
+  "provider": "Google",
+  "providerId": "125352352334",
+  "avatar": "profile.jpg",
+  "role": "Admin",
+  "status": "Active",
+  "createdAt": "2026-05-01",
+  "updatedAt": "2026-05-15"
+}
