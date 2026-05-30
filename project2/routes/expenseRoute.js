@@ -1,7 +1,7 @@
 const expController = require('../controllers/expenseController')
 const router = require('express').Router()
 const { handleErrors, validation } = require('../utilities/')
-const expenseSchema = require('../utilities/expense-validation')
+const { expenseSchema, expenseUpdate, idSchema  } = require('../utilities/expense-validation')
 const { isAuthenticate } = require('../middleware/authenticate')
 
 /** 
@@ -114,7 +114,7 @@ router.post('/create',
  *       404:
  *         description: Expense Data not found
 */
-router.put('/:expense_id', isAuthenticate, expController.updateExpense)
+router.put('/:expense_id', isAuthenticate, validation(expenseUpdate), handleErrors(expController.updateExpense))
 
 /** 
  * @swagger
@@ -138,7 +138,7 @@ router.put('/:expense_id', isAuthenticate, expController.updateExpense)
  *       500:
  *         description: Error Internal
 */
-router.delete('/:expense_id', isAuthenticate, expController.deleteExpense)
+router.delete('/:expense_id', isAuthenticate, validation(idSchema), handleErrors(expController.deleteExpense))
 
 
 module.exports = router
