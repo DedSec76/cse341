@@ -1,10 +1,17 @@
 const router = require('express').Router();
+const passport = require('passport')
 
 router.use('/expenses', require('./expenseRoute'));
 router.use('/movies' , require('./movieRoute'));
 
-router.use('/', (req, res) => {
-    res.send("Hello world")
+router.get('/login', passport.authenticate('github'), (req, res) => {})
+
+router.get('/logout', (req, res, next) => {
+    req.logout((err) => {
+        if(err) return next(err);
+        
+        res.redirect('/')
+    })
 })
 
 module.exports = router

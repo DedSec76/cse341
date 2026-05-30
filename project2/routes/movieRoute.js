@@ -3,6 +3,8 @@ const controller = require('../controllers/movieController')
 const { handleErrors, validation } = require('../utilities/')
 const { movieSchema, movieUpdate, idSchema } = require('../utilities/movie-validation')
 
+const { isAuthenticate } = require('../middleware/authenticate')
+
 /** 
  * @swagger
  * /movies/:
@@ -84,7 +86,7 @@ router.get('/:movie_id', validation(idSchema), handleErrors(controller.getMovie)
  *       500:
  *         description: Format incorrect
 */
-router.post('/create', validation(movieSchema), handleErrors(controller.createMovie))
+router.post('/create', isAuthenticate, validation(movieSchema), handleErrors(controller.createMovie))
 
 /** 
  * @swagger
@@ -112,7 +114,7 @@ router.post('/create', validation(movieSchema), handleErrors(controller.createMo
  *       404:
  *         description: Movie Data not found
 */
-router.patch('/:movie_id', validation(movieUpdate), handleErrors(controller.updateMovie))
+router.patch('/:movie_id', isAuthenticate, validation(movieUpdate), handleErrors(controller.updateMovie))
 
 /** 
  * @swagger
@@ -136,7 +138,7 @@ router.patch('/:movie_id', validation(movieUpdate), handleErrors(controller.upda
  *       500:
  *         description: Error Internal
 */
-router.delete('/:movie_id', validation(idSchema), handleErrors(controller.deleteMovie))
+router.delete('/:movie_id', isAuthenticate, validation(idSchema), handleErrors(controller.deleteMovie))
 
 
 module.exports = router;
